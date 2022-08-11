@@ -23,14 +23,20 @@ export class PostsService {
   fetchPosts() {
     return this.http
       .get<{ [key: string]: Post }>('https://angular-test-ec-default-rtdb.firebaseio.com/posts.json')
-      .pipe(map(responseData => {
-        const postsArray: Post[] = [];
-        for (const key in responseData) {
-          if (responseData.hasOwnProperty(key)) {
-            postsArray.push({ ...responseData[key], id: key });
+      .pipe(
+        map(responseData => {
+          const postsArray: Post[] = [];
+          for (const key in responseData) {
+            if (responseData.hasOwnProperty(key)) {
+              postsArray.push({ ...responseData[key], id: key });
+            }
           }
-        }
-        return postsArray;
-      }));
+          return postsArray;
+        })
+      );
+  }
+
+  deletePosts() {
+    return this.http.delete('https://angular-test-ec-default-rtdb.firebaseio.com/posts.json');
   }
 }
