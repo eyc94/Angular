@@ -21,7 +21,7 @@ export class PostsService {
   }
 
   fetchPosts() {
-    this.http
+    return this.http
       .get<{ [key: string]: Post }>('https://angular-test-ec-default-rtdb.firebaseio.com/posts.json')
       .pipe(map(responseData => {
         const postsArray: Post[] = [];
@@ -31,10 +31,6 @@ export class PostsService {
           }
         }
         return postsArray;
-      }))
-      .subscribe(
-        posts => {
-        }
-      );
+      }));
   }
 }
