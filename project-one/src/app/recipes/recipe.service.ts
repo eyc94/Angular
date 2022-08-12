@@ -8,27 +8,29 @@ import { Recipe } from "./recipe.model";
 export class RecipeService {
   recipesChanged = new Subject<Recipe[]>();
 
-  private recipes: Recipe[] = [
-    new Recipe(
-      'Al Pastor Tacos',
-      'This is a picture of delicious tacos.',
-      'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2020%2F03%2F19%2Ffideos-secos-tacos-FT-RECIPE0420-1.jpg&q=60',
-      [
-        new Ingredient('Pork', 1),
-        new Ingredient('Tortilla', 10)
-      ]
-    ),
-    new Recipe(
-      'Hamburger',
-      'This is a picture of an In-N-Out burger.',
-      'https://www.discoverlosangeles.com/sites/default/files/media/activities/in-n-out-double-double-animal-style_1.jpg?width=1600&height=1200&fit=crop&quality=78&auto=webp',
-      [
-        new Ingredient('Meet', 2),
-        new Ingredient('Cheese', 2),
-        new Ingredient('Buns', 2)
-      ]
-    )
-  ];
+  // private recipes: Recipe[] = [
+  //   new Recipe(
+  //     'Al Pastor Tacos',
+  //     'This is a picture of delicious tacos.',
+  //     'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2020%2F03%2F19%2Ffideos-secos-tacos-FT-RECIPE0420-1.jpg&q=60',
+  //     [
+  //       new Ingredient('Pork', 1),
+  //       new Ingredient('Tortilla', 10)
+  //     ]
+  //   ),
+  //   new Recipe(
+  //     'Hamburger',
+  //     'This is a picture of an In-N-Out burger.',
+  //     'https://www.discoverlosangeles.com/sites/default/files/media/activities/in-n-out-double-double-animal-style_1.jpg?width=1600&height=1200&fit=crop&quality=78&auto=webp',
+  //     [
+  //       new Ingredient('Meet', 2),
+  //       new Ingredient('Cheese', 2),
+  //       new Ingredient('Buns', 2)
+  //     ]
+  //   )
+  // ];
+
+  private recipes: Recipe[] = [];
 
   constructor(private slService: ShoppingListService) { }
 
